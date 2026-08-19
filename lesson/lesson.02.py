@@ -1,0 +1,2 @@
+a = input("bla bla")
+
