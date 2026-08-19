@@ -1,2 +1,2 @@
-a = input("bla bla")
-
+number = int(input("Введіть число: "))
+print(f"Квадрат числа: {number ** 2}")
