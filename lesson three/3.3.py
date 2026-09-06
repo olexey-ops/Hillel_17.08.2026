@@ -1,12 +1,16 @@
-import math
+def move_zeros(nums):
+    result = [x for x in nums if x != 0]
+    result += [0] * (len(nums) - len(result))
+    return result
 
-def split_list(lst):
-    mid = math.ceil(len(lst) / 2)
-    return [lst[:mid], lst[mid:]]
 
+# Перевірка на прикладах
+tests = [
+    [0, 1, 0, 12, 3],
+    [0],
+    [1, 0, 13, 0, 0, 0, 5],
+    [9, 0, 7, 31, 0, 45, 0, 45, 0, 45, 0, 0, 96, 0],
+]
 
-print(split_list([1, 2, 3, 4, 5, 6]))  # [[1, 2, 3], [4, 5, 6]]
-print(split_list([1, 2, 3]))           # [[1, 2], [3]]
-print(split_list([1, 2, 3, 4, 5]))     # [[1, 2, 3], [4, 5]]
-print(split_list([1]))                 # [[1], []]
-print(split_list([]))                  # [[], []]
+for t in tests:
+    print(f"{t} -> {move_zeros(t)}")
